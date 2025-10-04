@@ -8,7 +8,7 @@ function App() {
     {
       name: 'Matte Black',
       bgClass: 'matte-black-bg',
-      textColor: 'text-white',
+      textColor: 'text-gray-100',
       accentColor: 'text-red-500'
     },
     {
@@ -20,7 +20,7 @@ function App() {
     {
       name: 'Matte Red',
       bgClass: 'matte-red-bg',
-      textColor: 'text-white',
+      textColor: 'text-gray-100',
       accentColor: 'text-gray-200'
     }
   ];

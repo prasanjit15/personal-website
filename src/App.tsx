@@ -31,6 +31,35 @@ function App() {
 
   const theme = themes[currentTheme];
 
+  // Array of tech logos for easier management and duplication
+  const techLogos = [
+    { src: "./logos/aws.png", alt: "AWS Logo" },
+    { src: "./logos/terraform.png", alt: "Terraform Logo" },
+    { src: "./logos/jenkins.png", alt: "Jenkins Logo" },
+    { src: "./logos/docker.png", alt: "Docker Logo" },
+    { src: "./logos/kubernetes.png", alt: "Kubernetes Logo" },
+    { src: "./logos/jira.png", alt: "Jira Logo" },
+    { src: "./logos/confluence.png", alt: "Confluence Logo" },
+    { src: "./logos/postman.png", alt: "Postman Logo" },
+    { src: "./logos/chocolatey.png", alt: "Chocolatey Logo" },
+    { src: "./logos/ansible.png", alt: "Ansible Logo" },
+    { src: "./logos/asp.png", alt: "ASP Logo" },
+    { src: "./logos/nexus.png", alt: "Nexus Logo" },
+    { src: "./logos/linux.png", alt: "Linux Logo" },
+    { src: "./logos/windows.png", alt: "Windows Logo" },
+    { src: "./logos/gitlab.png", alt: "GitLab Logo" },
+    { src: "./logos/cisco.png", alt: "Cisco Logo" },
+    { src: "./logos/sql.png", alt: "SQL Logo" },
+    { src: "./logos/csharp.png", alt: "C# Logo" },
+    { src: "./logos/cpp.png", alt: "C++ Logo" },
+    { src: "./logos/python.png", alt: "Python Logo" },
+    { src: "./logos/django.png", alt: "Django Logo" },
+    { src: "./logos/flask.png", alt: "Flask Logo" },
+    { src: "./logos/servicenow.png", alt: "ServiceNow Logo" },
+    { src: "./logos/sonarqube.png", alt: "SonarQube Logo" },
+    { src: "./logos/splunk.png", alt: "Splunk Logo" }
+  ];
+
   return (
     <div 
       className={`min-h-screen w-full relative overflow-hidden ${theme.bgClass}`}
@@ -72,230 +101,15 @@ function App() {
             <div className="flex-1 mx-8 overflow-hidden relative">
               <div className="overflow-hidden whitespace-nowrap">
                 <div className="inline-flex animate-tech-slide">
-                  {/* AWS */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/aws.png"
-                      alt="AWS Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Terraform */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/terraform.png"
-                      alt="Terraform Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Jenkins */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/jenkins.png"
-                      alt="Jenkins Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Docker */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/docker.png"
-                      alt="Docker Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Kubernetes */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/kubernetes.png"
-                      alt="Kubernetes Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Jira */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/jira.png"
-                      alt="Jira Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Confluence */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/confluence.png"
-                      alt="Confluence Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Postman */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/postman.png"
-                      alt="Postman Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Chocolatey */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/chocolatey.png"
-                      alt="Chocolatey Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Ansible */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/ansible.png"
-                      alt="Ansible Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* ASP */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/asp.png"
-                      alt="ASP Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Nexus */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/nexus.png"
-                      alt="Nexus Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Linux */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/linux.png"
-                      alt="Linux Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Windows */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/windows.png"
-                      alt="Windows Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* GitLab */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/gitlab.png"
-                      alt="GitLab Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Cisco */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/cisco.png"
-                      alt="Cisco Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* SQL */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/sql.png"
-                      alt="SQL Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* C# */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/csharp.png"
-                      alt="C# Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* C++ */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/cpp.png"
-                      alt="C++ Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Python */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/python.png"
-                      alt="Python Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Django */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/django.png"
-                      alt="Django Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Flask */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/flask.png"
-                      alt="Flask Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* ServiceNow */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/servicenow.png"
-                      alt="ServiceNow Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* SonarQube */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/sonarqube.png"
-                      alt="SonarQube Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  
-                  {/* Splunk */}
-                  <div className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                    <img
-                      src="./logos/splunk.png"
-                      alt="Splunk Logo"
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
+                  {[...techLogos, ...techLogos].map((logo, index) => (
+                    <div key={`${logo.alt}-${index}`} className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
+                      <img
+                        src={logo.src}
+                        alt={logo.alt}
+                        className="w-20 h-20 object-contain"
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

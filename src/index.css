@@ -4,10 +4,11 @@
 
 /* Matte Background Styles */
 .matte-black-bg {
-  background-image: url('./logos/blackbg.jpg');
+  background-image: url('/logos/blackbg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: #1a1a1a; /* Fallback color if image fails */
 }
 
 .matte-white {

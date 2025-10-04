@@ -1,27 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Github, Linkedin, Instagram, User } from 'lucide-react';
+import p5 from 'p5';
 
 function App() {
   const [currentTheme, setCurrentTheme] = useState(0);
-  
+  const canvasRef = useRef<HTMLDivElement>(null);
+
   const themes = [
     {
       name: 'Matte Black',
       bgClass: 'matte-black',
       textColor: 'text-white',
-      accentColor: 'text-red-500'
+      accentColor: 'text-red-500',
+      bgColor: '#1a1a1a'
     },
     {
       name: 'Matte White',
       bgClass: 'matte-white',
       textColor: 'text-gray-900',
-      accentColor: 'text-red-700'
+      accentColor: 'text-red-700',
+      bgColor: '#f5f5f5'
     },
     {
       name: 'Matte Red',
       bgClass: 'matte-red',
       textColor: 'text-white',
-      accentColor: 'text-gray-200'
+      accentColor: 'text-gray-200',
+      bgColor: '#800000'
     }
   ];
 
@@ -31,7 +36,7 @@ function App() {
 
   const theme = themes[currentTheme];
 
-  // Array of tech logos for easier management and duplication
+  // Array of tech logos for easier management and animation
   const techLogos = [
     { src: "./logos/aws.png", alt: "AWS Logo" },
     { src: "./logos/terraform.png", alt: "Terraform Logo" },
@@ -59,6 +64,72 @@ function App() {
     { src: "./logos/sonarqube.png", alt: "SonarQube Logo" },
     { src: "./logos/splunk.png", alt: "Splunk Logo" }
   ];
+
+  useEffect(() => {
+    const sketch = (p: p5) => {
+      let logos: p5.Image[] = [];
+      let logoPositions: { x: number; y: number; vy: number; bounceCount: number }[] = [];
+
+      p.preload = () => {
+        techLogos.forEach((logo) => {
+          logos.push(p.loadImage(logo.src));
+        });
+      };
+
+      p.setup = () => {
+        p.createCanvas(p.windowWidth, p.windowHeight).parent(canvasRef.current!);
+        p.background(theme.bgColor);
+
+        // Initialize logo positions and velocities
+        logos.forEach((_, index) => {
+          logoPositions.push({
+            x: p.random(0, p.width),
+            y: p.random(-p.height, 0), // Start above the screen
+            vy: p.random(2, 5), // Random vertical velocity
+            bounceCount: 0
+          });
+        });
+      };
+
+      p.draw = () => {
+        p.background(theme.bgColor);
+
+        logoPositions.forEach((pos, index) => {
+          // Update position
+          pos.y += pos.vy;
+          pos.x += p.random(-1, 1); // Random horizontal drift
+
+          // Bounce when hitting the bottom
+          if (pos.y + logos[index].height > p.height) {
+            pos.y = p.height - logos[index].height;
+            pos.vy *= -0.7; // Elasticity (70% bounce back)
+            pos.bounceCount++;
+            if (pos.bounceCount > 3) pos.vy = 0; // Stop after a few bounces
+          }
+
+          // Reset to top if out of bounds (for continuous effect)
+          if (pos.y < -logos[index].height) {
+            pos.y = p.random(-p.height, 0);
+            pos.vy = p.random(2, 5);
+            pos.bounceCount = 0;
+          }
+
+          // Draw the logo
+          p.image(logos[index], pos.x, pos.y);
+        });
+      };
+
+      p.windowResized = () => {
+        p.resizeCanvas(p.windowWidth, p.windowHeight);
+      };
+    };
+
+    const p5Instance = new p5(sketch);
+
+    return () => {
+      p5Instance.remove();
+    };
+  }, [theme.bgColor]);
 
   return (
     <div 
@@ -97,22 +168,8 @@ function App() {
               </svg>
             </div>
             
-            {/* Tech Stack Slider */}
-            <div className="flex-1 mx-8 overflow-hidden relative">
-              <div className="overflow-hidden whitespace-nowrap">
-                <div className="inline-flex animate-tech-slide">
-                  {[...techLogos, ...techLogos, ...techLogos, ...techLogos].map((logo, index) => (
-                    <div key={`${logo.alt}-${index}`} className="flex items-center justify-center w-24 h-24 mx-6 opacity-70">
-                      <img
-                        src={logo.src}
-                        alt={logo.alt}
-                        className="w-20 h-20 object-contain"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+            {/* Canvas for Logo Animation */}
+            <div ref={canvasRef} className="w-full h-24 flex items-center justify-center"></div>
             
             {/* Single Transitioning Kanji Button */}
             <button

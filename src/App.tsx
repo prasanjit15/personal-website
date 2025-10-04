@@ -19,7 +19,7 @@ function App() {
     },
     {
       name: 'Matte Red',
-      bgClass: 'matte-red',
+      bgClass: 'matte-red-bg',
       textColor: 'text-white',
       accentColor: 'text-gray-200'
     }

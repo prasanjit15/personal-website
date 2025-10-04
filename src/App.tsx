@@ -147,19 +147,6 @@ function App() {
             </button>
           </div>
           
-          {/* Theme Indicators */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {themes.map((_, index) => (
-              <div
-                key={index}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === currentTheme 
-                    ? `${theme.accentColor.replace('text-', 'bg-')} opacity-100` 
-                    : `${theme.textColor.replace('text-', 'bg-')} opacity-30`
-                }`}
-              />
-            ))}
-          </div>
         </div>
       </div>
     </div>

@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 /* Matte Background Styles */
-.matte-black {
-  background-color: #1a1a1a; /* Deep matte black */
+.matte-black-bg {
+  background-image: url('./logos/blackbg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .matte-white {

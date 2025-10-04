@@ -7,7 +7,7 @@ function App() {
   const themes = [
     {
       name: 'Matte Black',
-      bgClass: 'matte-black',
+      bgClass: 'matte-black-bg',
       textColor: 'text-white',
       accentColor: 'text-red-500'
     },

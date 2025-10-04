@@ -122,7 +122,7 @@ function App() {
             </div>
             
             {/* Tech Stack Slider */}
-            <div className="flex-1 mx-8 overflow-hidden relative bg-white/30 backdrop-blur-md rounded-xl">
+            <div className="flex-1 mx-8 overflow-hidden relative bg-gray-100/20 backdrop-blur-lg rounded-xl">
               <div className="overflow-hidden whitespace-nowrap rounded-xl">
                 <div className="inline-flex animate-tech-slide">
                   {[...techLogos, ...techLogos, ...techLogos, ...techLogos].map((logo, index) => (

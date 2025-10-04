@@ -11,8 +11,12 @@
   background-color: #0a0a0a; /* Fallback color if image fails */
 }
 
-.matte-white {
-  background-color: #f5f5f5; /* Soft matte white */
+.matte-white-bg {
+  background-image: url('/logos/whitebg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f5f5f5; /* Fallback color if image fails */
 }
 
 .matte-red-bg {

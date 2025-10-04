@@ -20,7 +20,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #800000; /* Fallback color if image fails */
+  background-color: #400000; /* Darker fallback color if image fails */
 }
 
 /* Custom styles for better text rendering */

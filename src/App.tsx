@@ -80,7 +80,7 @@ function App() {
     { src: "./logos/cpp.png", alt: "C++ Logo" },
     { src: "./logos/cisco.png", alt: "Cisco Logo" },
     { src: "./logos/grafana.png", alt: "Grafana Logo" },
-    { src: "./logos/nexus_repository.png", alt: "Nexus Repository Logo" },
+    { src: "./logos/nexus.png", alt: "Nexus Repository Logo" },
     { src: "./logos/jenkins.png", alt: "Jenkins Logo" }
   ];
 

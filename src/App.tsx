@@ -43,7 +43,7 @@ function App() {
     { src: "./logos/html5.png", alt: "HTML5 Logo" },
     { src: "./logos/apache_groovy.png", alt: "Apache Groovy Logo" },
     { src: "./logos/flask.png", alt: "Flask Logo" },
-    { src: "./logos/asp_net.png", alt: "ASP.NET Logo" },
+    { src: "./logos/asp.png", alt: "ASP.NET Logo" },
     { src: "./logos/cassandra.png", alt: "Cassandra Logo" },
     { src: "./logos/bash.png", alt: "Bash Logo" },
     { src: "./logos/aws.png", alt: "AWS Logo" },

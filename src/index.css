@@ -15,8 +15,12 @@
   background-color: #f5f5f5; /* Soft matte white */
 }
 
-.matte-red {
-  background-color: #800000; /* Deep matte red */
+.matte-red-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/logos/redbg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #800000; /* Fallback color if image fails */
 }
 
 /* Custom styles for better text rendering */

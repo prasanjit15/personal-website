@@ -146,7 +146,6 @@ function App() {
               {['黒', '白', '赤'][currentTheme]}
             </button>
           </div>
-          
         </div>
       </div>
     </div>

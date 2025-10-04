@@ -43,7 +43,7 @@ function App() {
     { src: "./logos/html5.png", alt: "HTML5 Logo" },
     { src: "./logos/apache_groovy.png", alt: "Apache Groovy Logo" },
     { src: "./logos/flask.png", alt: "Flask Logo" },
-    { src: "./logos/asp.png", alt: "ASP.NET Logo" },
+    { src: "./logos/asp.net.png", alt: "ASP.NET Logo" },
     { src: "./logos/cassandra.png", alt: "Cassandra Logo" },
     { src: "./logos/bash.png", alt: "Bash Logo" },
     { src: "./logos/aws.png", alt: "AWS Logo" },
@@ -80,7 +80,7 @@ function App() {
     { src: "./logos/cpp.png", alt: "C++ Logo" },
     { src: "./logos/cisco.png", alt: "Cisco Logo" },
     { src: "./logos/grafana.png", alt: "Grafana Logo" },
-    { src: "./logos/nexus.png", alt: "Nexus Repository Logo" },
+    { src: "./logos/nexus_repository.png", alt: "Nexus Repository Logo" },
     { src: "./logos/jenkins.png", alt: "Jenkins Logo" }
   ];
 
@@ -122,7 +122,7 @@ function App() {
             </div>
             
             {/* Tech Stack Slider */}
-            <div className="flex-1 mx-8 overflow-hidden relative bg-white/2 backdrop-blur-xl rounded-2xl frosted-glass">
+            <div className="w-3/4 max-w-md mx-8 overflow-hidden relative bg-white/2 backdrop-blur-xl rounded-2xl frosted-glass" style={{ backdropFilter: 'blur(0.25px)', WebkitBackdropFilter: 'blur(0.25px)' }}>
               <div className="overflow-hidden whitespace-nowrap rounded-2xl">
                 <div className="inline-flex animate-tech-slide">
                   {[...techLogos, ...techLogos, ...techLogos, ...techLogos].map((logo, index) => (

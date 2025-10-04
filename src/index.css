@@ -59,14 +59,14 @@
 }
 
 .animate-tech-slide {
-  animation: tech-slide 60s linear infinite;
+  animation: tech-slide 120s linear infinite;
 }
 
 /* Enhanced Frosted Glass Effect for Slider */
 .frosted-glass {
   background-color: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(0.25px);
-  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  -webkit-backdrop-filter: blur(0.25px); /* For Safari support */
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

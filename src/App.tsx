@@ -43,7 +43,7 @@ function App() {
     { src: "./logos/html5.png", alt: "HTML5 Logo" },
     { src: "./logos/apache_groovy.png", alt: "Apache Groovy Logo" },
     { src: "./logos/flask.png", alt: "Flask Logo" },
-    { src: "./logos/asp.png", alt: "ASP.NET Logo" },
+    { src: "./logos/asp.net.png", alt: "ASP.NET Logo" },
     { src: "./logos/cassandra.png", alt: "Cassandra Logo" },
     { src: "./logos/bash.png", alt: "Bash Logo" },
     { src: "./logos/aws.png", alt: "AWS Logo" },
@@ -62,7 +62,7 @@ function App() {
     { src: "./logos/postgresql.png", alt: "PostgreSQL Logo" },
     { src: "./logos/confluence.png", alt: "Confluence Logo" },
     { src: "./logos/jira.png", alt: "Jira Logo" },
-    { src: "./logos/visualstudio.png", alt: "Visual Studio Logo" },
+    { src: "./logos/visual_studio.png", alt: "Visual Studio Logo" },
     { src: "./logos/pycharm.png", alt: "PyCharm Logo" },
     { src: "./logos/spark.png", alt: "Spark Logo" },
     { src: "./logos/vscode.png", alt: "VSCode Logo" },
@@ -80,7 +80,7 @@ function App() {
     { src: "./logos/cpp.png", alt: "C++ Logo" },
     { src: "./logos/cisco.png", alt: "Cisco Logo" },
     { src: "./logos/grafana.png", alt: "Grafana Logo" },
-    { src: "./logos/nexus.png", alt: "Nexus Repository Logo" },
+    { src: "./logos/nexus_repository.png", alt: "Nexus Repository Logo" },
     { src: "./logos/jenkins.png", alt: "Jenkins Logo" }
   ];
 
@@ -122,8 +122,8 @@ function App() {
             </div>
             
             {/* Tech Stack Slider */}
-            <div className="flex-1 mx-8 overflow-hidden relative">
-              <div className="overflow-hidden whitespace-nowrap">
+            <div className="flex-1 mx-8 overflow-hidden relative bg-white/30 backdrop-blur-md rounded-xl">
+              <div className="overflow-hidden whitespace-nowrap rounded-xl">
                 <div className="inline-flex animate-tech-slide">
                   {[...techLogos, ...techLogos, ...techLogos, ...techLogos].map((logo, index) => (
                     <div key={`${logo.alt}-${index}`} className="flex items-center justify-center w-24 h-24 mx-6 opacity-90">

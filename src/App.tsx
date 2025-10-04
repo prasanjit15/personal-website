@@ -13,7 +13,7 @@ function App() {
     },
     {
       name: 'Matte White',
-      bgClass: 'matte-white',
+      bgClass: 'matte-white-bg',
       textColor: 'text-gray-900',
       accentColor: 'text-red-700'
     },

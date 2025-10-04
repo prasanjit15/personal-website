@@ -61,3 +61,9 @@
 .animate-tech-slide {
   animation: tech-slide 60s linear infinite;
 }
+
+/* Enhanced Frosted Glass Effect for Slider */
+.frosted-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}

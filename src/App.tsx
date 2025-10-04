@@ -33,31 +33,55 @@ function App() {
 
   // Array of tech logos for easier management and duplication
   const techLogos = [
-    { src: "./logos/aws.png", alt: "AWS Logo" },
-    { src: "./logos/terraform.png", alt: "Terraform Logo" },
-    { src: "./logos/jenkins.png", alt: "Jenkins Logo" },
-    { src: "./logos/docker.png", alt: "Docker Logo" },
+    { src: "./logos/rancher.png", alt: "Rancher Logo" },
+    { src: "./logos/powershell.png", alt: "PowerShell Logo" },
+    { src: "./logos/putty.png", alt: "Putty Logo" },
+    { src: "./logos/nginx.png", alt: "Nginx Logo" },
+    { src: "./logos/mongodb.png", alt: "MongoDB Logo" },
     { src: "./logos/kubernetes.png", alt: "Kubernetes Logo" },
-    { src: "./logos/jira.png", alt: "Jira Logo" },
-    { src: "./logos/confluence.png", alt: "Confluence Logo" },
-    { src: "./logos/postman.png", alt: "Postman Logo" },
-    { src: "./logos/chocolatey.png", alt: "Chocolatey Logo" },
-    { src: "./logos/ansible.png", alt: "Ansible Logo" },
-    { src: "./logos/asp.png", alt: "ASP Logo" },
-    { src: "./logos/nexus.png", alt: "Nexus Logo" },
-    { src: "./logos/linux.png", alt: "Linux Logo" },
-    { src: "./logos/windows.png", alt: "Windows Logo" },
-    { src: "./logos/gitlab.png", alt: "GitLab Logo" },
-    { src: "./logos/cisco.png", alt: "Cisco Logo" },
-    { src: "./logos/sql.png", alt: "SQL Logo" },
-    { src: "./logos/csharp.png", alt: "C# Logo" },
-    { src: "./logos/cpp.png", alt: "C++ Logo" },
-    { src: "./logos/python.png", alt: "Python Logo" },
-    { src: "./logos/django.png", alt: "Django Logo" },
+    { src: "./logos/json.png", alt: "JSON Logo" },
+    { src: "./logos/html5.png", alt: "HTML5 Logo" },
+    { src: "./logos/apache_groovy.png", alt: "Apache Groovy Logo" },
     { src: "./logos/flask.png", alt: "Flask Logo" },
-    { src: "./logos/servicenow.png", alt: "ServiceNow Logo" },
+    { src: "./logos/asp.net.png", alt: "ASP.NET Logo" },
+    { src: "./logos/cassandra.png", alt: "Cassandra Logo" },
+    { src: "./logos/bash.png", alt: "Bash Logo" },
+    { src: "./logos/aws.png", alt: "AWS Logo" },
+    { src: "./logos/helm.png", alt: "Helm Logo" },
+    { src: "./logos/csharp.png", alt: "C# Logo" },
+    { src: "./logos/ansible.png", alt: "Ansible Logo" },
+    { src: "./logos/postman.png", alt: "Postman Logo" },
+    { src: "./logos/podman.png", alt: "Podman Logo" },
+    { src: "./logos/docker.png", alt: "Docker Logo" },
+    { src: "./logos/gitlab.png", alt: "GitLab Logo" },
+    { src: "./logos/git.png", alt: "Git Logo" },
+    { src: "./logos/windows.png", alt: "Windows Logo" },
+    { src: "./logos/linux.png", alt: "Linux Logo" },
+    { src: "./logos/swift.png", alt: "Swift Logo" },
+    { src: "./logos/mysql.png", alt: "MySQL Logo" },
+    { src: "./logos/postgresql.png", alt: "PostgreSQL Logo" },
+    { src: "./logos/confluence.png", alt: "Confluence Logo" },
+    { src: "./logos/jira.png", alt: "Jira Logo" },
+    { src: "./logos/visual_studio.png", alt: "Visual Studio Logo" },
+    { src: "./logos/pycharm.png", alt: "PyCharm Logo" },
+    { src: "./logos/spark.png", alt: "Spark Logo" },
+    { src: "./logos/vscode.png", alt: "VSCode Logo" },
+    { src: "./logos/dbeaver.png", alt: "DBeaver Logo" },
+    { src: "./logos/prometheus.png", alt: "Prometheus Logo" },
+    { src: "./logos/mlflow.png", alt: "MLflow Logo" },
+    { src: "./logos/dvc.png", alt: "DVC Logo" },
+    { src: "./logos/terraform.png", alt: "Terraform Logo" },
     { src: "./logos/sonarqube.png", alt: "SonarQube Logo" },
-    { src: "./logos/splunk.png", alt: "Splunk Logo" }
+    { src: "./logos/splunk.png", alt: "Splunk Logo" },
+    { src: "./logos/servicenow.png", alt: "ServiceNow Logo" },
+    { src: "./logos/django.png", alt: "Django Logo" },
+    { src: "./logos/python.png", alt: "Python Logo" },
+    { src: "./logos/chocolatey.png", alt: "Chocolatey Logo" },
+    { src: "./logos/cpp.png", alt: "C++ Logo" },
+    { src: "./logos/cisco.png", alt: "Cisco Logo" },
+    { src: "./logos/grafana.png", alt: "Grafana Logo" },
+    { src: "./logos/nexus_repository.png", alt: "Nexus Repository Logo" },
+    { src: "./logos/jenkins.png", alt: "Jenkins Logo" }
   ];
 
   return (
@@ -102,7 +126,7 @@ function App() {
               <div className="overflow-hidden whitespace-nowrap">
                 <div className="inline-flex animate-tech-slide">
                   {[...techLogos, ...techLogos, ...techLogos, ...techLogos].map((logo, index) => (
-                    <div key={`${logo.alt}-${index}`} className="flex items-center justify-center w-24 h-24 mx-6 opacity-90">
+                    <div key={`${logo.alt}-${index}`} className="flex items-center justify-center w-24 h-24 mx-6 bg-white bg-opacity-10">
                       <img
                         src={logo.src}
                         alt={logo.alt}

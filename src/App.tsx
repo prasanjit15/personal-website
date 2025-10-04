@@ -62,7 +62,7 @@ function App() {
     { src: "./logos/postgresql.png", alt: "PostgreSQL Logo" },
     { src: "./logos/confluence.png", alt: "Confluence Logo" },
     { src: "./logos/jira.png", alt: "Jira Logo" },
-    { src: "./logos/visual_studio.png", alt: "Visual Studio Logo" },
+    { src: "./logos/visualstudio.png", alt: "Visual Studio Logo" },
     { src: "./logos/pycharm.png", alt: "PyCharm Logo" },
     { src: "./logos/spark.png", alt: "Spark Logo" },
     { src: "./logos/vscode.png", alt: "VSCode Logo" },

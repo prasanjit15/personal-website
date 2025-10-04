@@ -126,7 +126,7 @@ function App() {
               <div className="overflow-hidden whitespace-nowrap">
                 <div className="inline-flex animate-tech-slide">
                   {[...techLogos, ...techLogos, ...techLogos, ...techLogos].map((logo, index) => (
-                    <div key={`${logo.alt}-${index}`} className="flex items-center justify-center w-24 h-24 mx-6 bg-white bg-opacity-10">
+                    <div key={`${logo.alt}-${index}`} className="flex items-center justify-center w-24 h-24 mx-6 opacity-90">
                       <img
                         src={logo.src}
                         alt={logo.alt}

@@ -6,22 +6,22 @@ function App() {
   
   const themes = [
     {
-      name: 'Black Red',
-      bgClass: 'black-red-gradient',
+      name: 'Matte Black',
+      bgClass: 'matte-black',
       textColor: 'text-white',
-      accentColor: 'text-red-400'
+      accentColor: 'text-red-500'
     },
     {
-      name: 'White Red',
-      bgClass: 'white-red-gradient',
+      name: 'Matte White',
+      bgClass: 'matte-white',
       textColor: 'text-gray-900',
-      accentColor: 'text-red-600'
+      accentColor: 'text-red-700'
     },
     {
-      name: 'Red Black',
-      bgClass: 'red-black-gradient',
+      name: 'Matte Red',
+      bgClass: 'matte-red',
       textColor: 'text-white',
-      accentColor: 'text-red-200'
+      accentColor: 'text-gray-200'
     }
   ];
 

@@ -68,7 +68,6 @@ function App() {
               <br />
               Powering resilient systems for tomorrow's ideas 💡 while connecting markets East and West 🌍
             </p>
-            </p>
             
             {/* Social Icons */}
             <div className="flex justify-center space-x-4 md:space-x-6 mb-8 md:mb-16">

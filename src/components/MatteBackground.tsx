@@ -23,14 +23,14 @@ export const MatteBackground: React.FC<MatteBackgroundProps> = ({ theme, classNa
       case 'white':
         return {
           background: `
-            radial-gradient(circle at 20% 80%, rgba(0, 0, 0, 0.02) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.03) 0%, transparent 50%),
-            radial-gradient(circle at 40% 40%, rgba(0, 0, 0, 0.01) 0%, transparent 50%),
-            linear-gradient(135deg, #f8f8f8 0%, #ffffff 25%, #f5f5f5 50%, #fafafa 75%, #f7f7f7 100%)
+            radial-gradient(circle at 20% 80%, rgba(0, 0, 0, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.04) 0%, transparent 50%),
+            radial-gradient(circle at 40% 40%, rgba(0, 0, 0, 0.02) 0%, transparent 50%),
+            linear-gradient(135deg, #f0f0f0 0%, #f5f5f5 25%, #ebebeb 50%, #f2f2f2 75%, #ededed 100%)
           `,
           backgroundSize: '400px 400px, 300px 300px, 200px 200px, 100% 100%',
           backgroundPosition: '0 0, 100px 100px, 200px 200px, 0 0',
-          filter: 'contrast(1.05) brightness(1.02)',
+          filter: 'contrast(1.08) brightness(0.96)',
         };
       case 'red':
         return {

@@ -30,34 +30,36 @@ export const MatteBackground: React.FC<MatteBackgroundProps> = ({ theme, classNa
       className={`absolute inset-0 ${className}`}
       style={getBackgroundStyle()}
     >
-      {/* Matte texture overlay */}
-      <div 
-        className="absolute inset-0 opacity-40"
-        style={{
-          backgroundImage: `
-            repeating-linear-gradient(
-              45deg,
-              transparent,
-              transparent 1px,
-              rgba(255,255,255,0.02) 1px,
-              rgba(255,255,255,0.02) 2px
-            ),
-            repeating-linear-gradient(
-              -45deg,
-              transparent,
-              transparent 1px,
-              rgba(0,0,0,0.02) 1px,
-              rgba(0,0,0,0.02) 2px
-            ),
-            radial-gradient(
-              circle at 50% 50%,
-              rgba(255,255,255,0.01) 0%,
-              transparent 70%
-            )
-          `,
-          backgroundSize: '8px 8px, 8px 8px, 200px 200px',
-        }}
-      />
+      {/* Matte texture overlay, only for white and red themes */}
+      {theme !== 'black' && (
+        <div 
+          className="absolute inset-0 opacity-40"
+          style={{
+            backgroundImage: `
+              repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 1px,
+                rgba(255,255,255,0.02) 1px,
+                rgba(255,255,255,0.02) 2px
+              ),
+              repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 1px,
+                rgba(0,0,0,0.02) 1px,
+                rgba(0,0,0,0.02) 2px
+              ),
+              radial-gradient(
+                circle at 50% 50%,
+                rgba(255,255,255,0.01) 0%,
+                transparent 70%
+              )
+            `,
+            backgroundSize: '8px 8px, 8px 8px, 200px 200px',
+          }}
+        />
+      )}
     </div>
   );
 };

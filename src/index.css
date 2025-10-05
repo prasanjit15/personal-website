@@ -32,6 +32,17 @@
     html {
       -webkit-text-size-adjust: 100%;
     }
+    .max-w-4xl {
+      max-width: 90vw; /* Use viewport width to ensure text fits */
+    }
+    .text-base {
+      font-size: 0.875rem; /* Smaller font size for mobile */
+      line-height: 1.5rem;
+    }
+    .text-lg {
+      font-size: 1rem; /* Adjust sm:text-lg for mobile */
+      line-height: 1.75rem;
+    }
   }
 }
 

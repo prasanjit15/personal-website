@@ -42,7 +42,7 @@ export const MatteBackground: React.FC<MatteBackgroundProps> = ({ theme, classNa
           `,
           backgroundSize: '400px 400px, 300px 300px, 200px 200px, 100% 100%',
           backgroundPosition: '0 0, 100px 100px, 200px 200px, 0 0',
-          filter: 'contrast(1.1) brightness(0.98)',
+          filter: 'contrast(1.1) brightness(0.80)',
         };
       default:
         return {};

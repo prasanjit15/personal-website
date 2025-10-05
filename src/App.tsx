@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Instagram, User, Menu, X, ArrowUpRight } from 'lucide-react';
 import { MatteBackground } from './components/MatteBackground';
 import { TechLogo } from './components/TechLogo';
@@ -35,6 +35,22 @@ function App() {
     setCurrentTheme((prev) => (prev + 1) % themes.length);
   };
 
+  // Set favicon dynamically
+  useEffect(() => {
+    const setFavicon = () => {
+      let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+      if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.head.appendChild(link);
+      }
+      link.href = '/logos/pm.png';
+      link.type = 'image/png';
+    };
+
+    setFavicon();
+  }, []);
+
   const theme = themes[currentTheme];
 
   const techStack = [
@@ -62,7 +78,6 @@ function App() {
               Hi, I'm Prasannjit.
             </h1>
             
-            {/* FIXED: Nomura logo alignment */}
             <p className={`text-base sm:text-lg md:text-xl font-light mb-8 md:mb-10 max-w-4xl mx-auto leading-relaxed px-4 ${theme.textColor}`}>
               <span className="inline-flex items-center space-x-2">
                 <span>Senior Infra Associate at</span>
@@ -114,15 +129,6 @@ function App() {
                 <ArrowUpRight className={`w-6 h-6 ${theme.textColor}`} />
               </button>
               
-              {/* Mobile Tech Stack Grid */}
-              <div className="grid grid-cols-4 gap-3 max-w-sm mx-auto px-4 relative z-10">
-                {techStack.map((tech, index) => (
-                  <div key={`mobile-${tech}-${index}`} className={`h-16 bg-white/5 backdrop-blur-sm rounded-lg border ${theme.borderColor} p-2`}>
-                    <TechLogo name={tech === 'visual_studio' ? 'visual_studio' : tech} className={`w-full h-full ${theme.textColor}`} />
-                  </div>
-                ))}
-              </div>
-              
               <button
                 className={`w-16 h-16 rounded-full text-3xl font-bold transition-all duration-700 ease-in-out ${theme.bgTheme === 'red' ? 'text-black' : 'text-red-400 shadow-sm'} ${theme.accentColor} !important bg-transparent opacity-90 hover:opacity-100 hover:scale-110 transform flex items-center justify-center`}
                 onClick={handleThemeChange}
@@ -131,6 +137,21 @@ function App() {
               </button>
             </div>
           )}
+
+          {/* Mobile Bottom Navigation */}
+          <div className="md:hidden fixed bottom-8 left-0 right-0 flex justify-center items-center">
+            <div className={`w-[70vw] mx-auto overflow-hidden relative backdrop-blur-xl bg-white/5 rounded-2xl border ${theme.borderColor}`}>
+              <div className="overflow-hidden whitespace-nowrap rounded-2xl py-2">
+                <div className="inline-flex animate-tech-slide-mobile">
+                  {[...techStack, ...techStack, ...techStack].map((tech, index) => (
+                    <div key={`mobile-home-${tech}-${index}`} className="w-12 h-8 mx-2 opacity-90 p-1">
+                      <TechLogo name={tech === 'visual_studio' ? 'visual_studio' : tech} className={`w-full h-full ${theme.textColor}`} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Desktop Bottom Navigation */}
           <div className="hidden md:flex absolute bottom-8 left-8 right-8 justify-between items-center">
@@ -142,7 +163,6 @@ function App() {
               <ArrowUpRight className={`w-6 h-6 ${theme.textColor}`} />
             </button>
             
-            {/* Desktop Tech Stack Slider */}
             <div className={`w-[80%] mx-auto overflow-hidden relative backdrop-blur-xl bg-white/1 rounded-2xl border ${theme.borderColor}`}>
               <div className="overflow-hidden whitespace-nowrap rounded-2xl py-4">
                 <div className="inline-flex animate-tech-slide">

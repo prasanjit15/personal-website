@@ -88,6 +88,40 @@
   }
 }
 
+/* Mobile Tech Slider Animation */
+@keyframes tech-slide-mobile {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-tech-slide-mobile {
+  animation: tech-slide-mobile 60s linear infinite;
+}
+
+/* Pause animation on hover for better UX */
+.animate-tech-slide-mobile:hover {
+  animation-play-state: paused;
+}
+
+/* Ensure mobile slider takes 70% of screen width and has reduced height */
+@media (max-width: 768px) {
+  .w-\[70vw\] {
+    width: 70vw;
+  }
+  .animate-tech-slide-mobile .w-12 {
+    width: 3rem; /* Smaller logo size for mobile */
+    height: 2rem;
+  }
+  .animate-tech-slide-mobile .py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
 /* Logo loading states */
 .tech-logo-loading {
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Github, Linkedin, Instagram, User, Menu, X } from 'lucide-react';
+import { MatteBackground } from './components/MatteBackground';
+import { TechLogo } from './components/TechLogo';
 
 function App() {
   const [currentTheme, setCurrentTheme] = useState(0);
@@ -8,21 +10,21 @@ function App() {
   const themes = [
     {
       name: 'Matte Black',
-      bgClass: 'bg-gradient-to-br from-gray-900 via-black to-gray-800',
+      bgTheme: 'black' as const,
       textColor: 'text-gray-100',
       accentColor: 'text-red-500',
       borderColor: 'border-gray-700'
     },
     {
       name: 'Matte White',
-      bgClass: 'bg-gradient-to-br from-gray-50 via-white to-gray-100',
+      bgTheme: 'white' as const,
       textColor: 'text-gray-900',
       accentColor: 'text-red-700',
       borderColor: 'border-gray-300'
     },
     {
       name: 'Matte Red',
-      bgClass: 'bg-gradient-to-br from-red-900 via-red-800 to-red-700',
+      bgTheme: 'red' as const,
       textColor: 'text-gray-100',
       accentColor: 'text-gray-200',
       borderColor: 'border-red-600'
@@ -35,20 +37,22 @@ function App() {
 
   const theme = themes[currentTheme];
 
-  // Simplified tech stack without images for now
   const techStack = [
-    'Rancher', 'PowerShell', 'Putty', 'Nginx', 'MongoDB', 'Kubernetes',
-    'JSON', 'HTML5', 'Groovy', 'Flask', 'ASP.NET', 'Cassandra',
-    'Bash', 'AWS', 'Helm', 'C#', 'Ansible', 'Postman',
-    'Podman', 'Docker', 'GitLab', 'Git', 'Windows', 'Linux',
-    'Swift', 'MySQL', 'PostgreSQL', 'Confluence', 'Jira', 'VS',
-    'PyCharm', 'Spark', 'VSCode', 'DBeaver', 'Prometheus', 'MLflow',
-    'DVC', 'Terraform', 'SonarQube', 'Splunk', 'ServiceNow', 'Django',
-    'Python', 'Chocolatey', 'C++', 'Cisco', 'Grafana', 'Nexus', 'Jenkins'
+    'rancher', 'powershell', 'putty', 'nginx', 'mongodb', 'kubernetes',
+    'json', 'html5', 'apache_groovy', 'flask', 'asp', 'cassandra',
+    'bash', 'aws', 'helm', 'csharp', 'ansible', 'postman',
+    'podman', 'docker', 'gitlab', 'git', 'windows', 'linux',
+    'swift', 'mysql', 'postgresql', 'confluence', 'jira', 'visual_studio',
+    'pycharm', 'spark', 'vscode', 'dbeaver', 'prometheus', 'mlflow',
+    'dvc', 'terraform', 'sonarqube', 'splunk', 'servicenow', 'django',
+    'python', 'chocolatey', 'cpp', 'cisco', 'grafana', 'nexus', 'jenkins'
   ];
 
   return (
-    <div className={`min-h-screen w-full relative overflow-hidden ${theme.bgClass}`}>
+    <div className="min-h-screen w-full relative overflow-hidden">
+      {/* Matte Background */}
+      <MatteBackground theme={theme.bgTheme} />
+      
       {/* Content Container */}
       <div className="relative z-10 min-h-screen flex items-center justify-center p-4 md:p-8">
         <div className="text-center max-w-4xl mx-auto w-full">
@@ -90,7 +94,8 @@ function App() {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className={`md:hidden fixed inset-0 z-40 ${theme.bgClass} backdrop-blur-lg flex flex-col items-center justify-center space-y-8`}>
+            <div className="md:hidden fixed inset-0 z-40 backdrop-blur-lg flex flex-col items-center justify-center space-y-8">
+              <MatteBackground theme={theme.bgTheme} className="opacity-95" />
               <button
                 className={`px-6 py-3 rounded-full text-base ${theme.textColor} opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer flex items-center space-x-2 border ${theme.borderColor} backdrop-blur-sm bg-white/5`}
                 onClick={() => window.open('/resume.pdf', '_blank')}
@@ -102,12 +107,10 @@ function App() {
               </button>
               
               {/* Mobile Tech Stack Grid */}
-              <div className="grid grid-cols-4 gap-3 max-w-sm mx-auto px-4">
+              <div className="grid grid-cols-4 gap-3 max-w-sm mx-auto px-4 relative z-10">
                 {techStack.slice(0, 16).map((tech, index) => (
-                  <div key={`mobile-${tech}-${index}`} className={`flex items-center justify-center h-16 bg-white/5 backdrop-blur-sm rounded-lg border ${theme.borderColor}`}>
-                    <span className={`text-xs font-medium ${theme.textColor} text-center px-1`}>
-                      {tech}
-                    </span>
+                  <div key={`mobile-${tech}-${index}`} className={`h-16 bg-white/5 backdrop-blur-sm rounded-lg border ${theme.borderColor} p-2`}>
+                    <TechLogo name={tech} className={`w-full h-full ${theme.textColor}`} />
                   </div>
                 ))}
               </div>
@@ -138,8 +141,8 @@ function App() {
               <div className="overflow-hidden whitespace-nowrap rounded-2xl py-4">
                 <div className="inline-flex animate-tech-slide">
                   {[...techStack, ...techStack, ...techStack].map((tech, index) => (
-                    <div key={`desktop-${tech}-${index}`} className={`flex items-center justify-center w-24 h-16 mx-4 opacity-90 text-sm font-medium ${theme.textColor}`}>
-                      {tech}
+                    <div key={`desktop-${tech}-${index}`} className="w-24 h-16 mx-4 opacity-90 p-2">
+                      <TechLogo name={tech} className={`w-full h-full ${theme.textColor}`} />
                     </div>
                   ))}
                 </div>

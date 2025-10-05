@@ -10,14 +10,7 @@ export const MatteBackground: React.FC<MatteBackgroundProps> = ({ theme, classNa
     switch (theme) {
       case 'black':
         return {
-          background: `
-            radial-gradient(circle at 30% 70%, rgba(40, 40, 40, 0.3) 0%, transparent 70%),
-            radial-gradient(circle at 70% 30%, rgba(30, 30, 30, 0.2) 0%, transparent 70%),
-            linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 25%, #141414 50%, #1c1c1c 75%, #111111 100%)
-          `,
-          backgroundSize: '800px 800px, 600px 600px, 100% 100%',
-          backgroundPosition: '0 0, 200px 200px, 0 0',
-          filter: 'contrast(1.02) brightness(0.9)',
+          background: '#0f0f0f',
         };
       case 'white':
         return {

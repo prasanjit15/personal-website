@@ -67,8 +67,6 @@ function App() {
               <span className={`font-semibold ${theme.accentColor}`}>NOMURA</span>
               <br />
               Powering resilient systems for tomorrow's ideas 💡 while connecting markets East and West 🌍
-            </p>
-            
             {/* Social Icons */}
             <div className="flex justify-center space-x-4 md:space-x-6 mb-8 md:mb-16">
               <a href="https://github.com" target="_blank" rel="noopener noreferrer">

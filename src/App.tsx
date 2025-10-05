@@ -65,7 +65,8 @@ function App() {
             <p className={`text-base sm:text-lg md:text-xl font-light mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed px-4 ${theme.textColor}`}>
               Senior Infra Associate at{" "}
               <span className={`font-semibold ${theme.accentColor}`}>NOMURA</span>
-              {" "}Powering resilient systems for tomorrow's ideas 💡 while connecting markets East and West 🌍
+              <br />
+              Powering resilient systems for tomorrow's ideas 💡 while connecting markets East and West 🌍
             </p>
             
             {/* Social Icons */}

@@ -11,14 +11,13 @@ export const MatteBackground: React.FC<MatteBackgroundProps> = ({ theme, classNa
       case 'black':
         return {
           background: `
-            radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.05) 0%, transparent 50%),
-            linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 25%, #0f0f0f 50%, #1c1c1c 75%, #111111 100%)
+            radial-gradient(circle at 25% 75%, rgba(120, 119, 198, 0.06) 0%, transparent 60%),
+            radial-gradient(circle at 75% 25%, rgba(255, 119, 198, 0.04) 0%, transparent 60%),
+            linear-gradient(135deg, #0a0a0a 0%, #151515 30%, #0d0d0d 60%, #181818 100%)
           `,
-          backgroundSize: '400px 400px, 300px 300px, 200px 200px, 100% 100%',
-          backgroundPosition: '0 0, 100px 100px, 200px 200px, 0 0',
-          filter: 'contrast(1.1) brightness(0.75)',
+          backgroundSize: '500px 500px, 400px 400px, 100% 100%',
+          backgroundPosition: '0 0, 150px 150px, 0 0',
+          filter: 'contrast(1.05) brightness(0.8)',
         };
       case 'white':
         return {

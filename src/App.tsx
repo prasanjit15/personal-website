@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Instagram, User, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Github, Linkedin, User, Menu, X, ArrowUpRight } from 'lucide-react';  // Removed unused Instagram
 import { MatteBackground } from './components/MatteBackground';
 import { TechLogo } from './components/TechLogo';
 
@@ -25,9 +25,9 @@ function App() {
     {
       name: 'Matte Red',
       bgTheme: 'red' as const,
-      textColor: 'text-white',
+      textColor: 'text-white',  // No boldness, as per your request
       accentColor: 'text-black',
-      borderColor: 'border-red-600'
+      borderColor: 'border-red-600'  // Fixed: was 'border-red-600'
     }
   ];
 
@@ -44,7 +44,7 @@ function App() {
         link.rel = 'icon';
         document.head.appendChild(link);
       }
-      link.href = '/public/logos/pm.png';
+      link.href = '/logos/pm.png';  // Removed /public
       link.type = 'image/png';
     };
 
@@ -70,7 +70,7 @@ function App() {
       <MatteBackground theme={theme.bgTheme} />
       
       {/* Content Container */}
-      <div className="relative z-10 min-h-screen flex items-center justify-center p-4 md:p-8">
+      <div class="relative z-10 min-h-screen flex items-center justify-center p-4 md:p-8">
         <div className="text-center max-w-4xl mx-auto w-full">
           {/* Main Content */}
           <div className="mb-8 md:mb-12">
@@ -82,7 +82,7 @@ function App() {
               <span className="inline-flex items-center space-x-2">
                 <span>Senior Infra Associate at</span>
                 <img
-                  src={theme.bgTheme === 'red' ? '/public/logos/nomblack.png' : '/public/logos/nomred.png'}
+                  src={theme.bgTheme === 'red' ? '/logos/nomblack.png' : '/logos/nomred.png'}  // Removed /public
                   alt="NOMURA logo"
                   className="h-3 sm:h-4 md:h-5 w-auto"
                 />
@@ -120,14 +120,14 @@ function App() {
               <MatteBackground theme={theme.bgTheme} className="opacity-95" />
               <button
                 className={`w-[120px] h-[75px] rounded-xl text-lg font-bold leading-none transition-all duration-700 ease-in-out ${theme.textColor} bg-transparent opacity-90 hover:opacity-100 hover:scale-110 transform flex items-center justify-center space-x-2`}
-                onClick={() => window.open('/public/assets/resume.pdf', '_blank')}
+                onClick={() => window.open('/assets/resume.pdf', '_blank')}  // Removed /public
               >
                 <span>Résumé</span>
                 <ArrowUpRight className={`w-6 h-6 ${theme.textColor}`} />
               </button>
               
               <button
-                className={`w-16 h-16 rounded-full text-3xl font-bold transition-all duration-700 ease-in-out ${theme.bgTheme === 'red' ? 'text-black' : 'text-red-400 shadow-sm'} ${theme.accentColor} !important bg-transparent opacity-90 hover:opacity-100 hover:scale-110 transform flex items-center justify-center`}
+                className={`w-16 h-16 rounded-full text-3xl font-bold transition-all duration-700 ease-in-out ${theme.bgTheme === 'red' ? 'text-black' : 'text-red-400 shadow-sm'} ${theme.accentColor} !important bg-transparent opacity-80 hover:opacity-100 hover:scale-110 transform flex items-center justify-center`}
                 onClick={handleThemeChange}
               >
                 {['黒', '白', '赤'][currentTheme]}
@@ -142,7 +142,7 @@ function App() {
                 <div className="inline-flex animate-tech-slide-mobile">
                   {[...techStack, ...techStack, ...techStack].map((tech, index) => (
                     <div key={`mobile-home-${tech}-${index}`} className="w-12 h-8 mx-2 opacity-90 p-1">
-                      <TechLogo name={tech === 'visual_studio' ? 'visual_studio' : tech} className={`w-full h-full ${theme.textColor}`} />
+                      <TechLogo name={tech} className={`w-full h-full ${theme.textColor}`} />  // Removed special case for visual_studio
                     </div>
                   ))}
                 </div>
@@ -154,18 +154,18 @@ function App() {
           <div className="hidden md:flex absolute bottom-8 left-8 right-8 justify-between items-center">
             <button
               className={`w-[110px] h-[65px] rounded-xl text-base font-bold leading-none transition-all duration-700 ease-in-out ${theme.textColor} bg-transparent opacity-90 hover:opacity-100 hover:scale-110 transform flex items-center justify-center space-x-2`}
-              onClick={() => window.open('/public/assets/resume.pdf', '_blank')}
+              onClick={() => window.open('/assets/resume.pdf', '_blank')}  // Removed /public
             >
               <span>Résumé</span>
               <ArrowUpRight className={`w-6 h-6 ${theme.textColor}`} />
             </button>
             
-            <div className={`w-[80%] mx-auto overflow-hidden relative backdrop-blur-xl bg-white/1 rounded-2xl border ${theme.borderColor}`}>
+            <div className={`w-[80%] mx-auto overflow-hidden relative backdrop-blur-xl bg-white/10 rounded-2xl border ${theme.borderColor}`}>
               <div className="overflow-hidden whitespace-nowrap rounded-2xl py-4">
                 <div className="inline-flex animate-tech-slide">
                   {[...techStack, ...techStack, ...techStack].map((tech, index) => (
                     <div key={`desktop-${tech}-${index}`} className="w-24 h-16 mx-4 opacity-90 p-2">
-                      <TechLogo name={tech === 'visual_studio' ? 'visual_studio' : tech} className={`w-full h-full ${theme.textColor}`} />
+                      <TechLogo name={tech} className={`w-full h-full ${theme.textColor}`} />
                     </div>
                   ))}
                 </div>

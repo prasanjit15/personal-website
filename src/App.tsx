@@ -93,16 +93,13 @@ function App() {
             
             {/* Social Icons */}
             <div className="flex justify-center space-x-4 md:space-x-6 mb-8 md:mb-16">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/prasanjit15" target="_blank" rel="noopener noreferrer">
                 <Github className={`w-6 h-6 md:w-8 md:h-8 ${theme.textColor} hover:${theme.accentColor.replace('text-', 'text-')} transition-all duration-300 cursor-pointer hover:scale-110 active:scale-95`} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/prasannjit-mohapatra/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className={`w-6 h-6 md:w-8 md:h-8 ${theme.textColor} hover:${theme.accentColor.replace('text-', 'text-')} transition-all duration-300 cursor-pointer hover:scale-110 active:scale-95`} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                <Instagram className={`w-6 h-6 md:w-8 md:h-8 ${theme.textColor} hover:${theme.accentColor.replace('text-', 'text-')} transition-all duration-300 cursor-pointer hover:scale-110 active:scale-95`} />
-              </a>
-              <a href="https://prasannjit.me" target="_blank" rel="noopener noreferrer">
+              <a href="https://prasannjit.com" target="_blank" rel="noopener noreferrer">
                 <User className={`w-6 h-6 md:w-8 md:h-8 ${theme.textColor} hover:${theme.accentColor.replace('text-', 'text-')} transition-all duration-300 cursor-pointer hover:scale-110 active:scale-95`} />
               </a>
             </div>

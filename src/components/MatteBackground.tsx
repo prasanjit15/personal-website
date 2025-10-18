@@ -18,7 +18,7 @@ export const MatteBackground: React.FC<MatteBackgroundProps> = ({ theme, classNa
         };
       case 'red':
         return {
-          background: '#7f1d1d',
+          background: '#b91c1c', // Changed from #7f1d1d to brighter red
         };
       default:
         return {};

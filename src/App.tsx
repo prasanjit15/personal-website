@@ -25,7 +25,7 @@ function App() {
     {
       name: 'Matte Red',
       bgTheme: 'red' as const,
-      textColor: 'text-gray-100',
+      textColor: 'text-white',
       accentColor: 'text-black',
       borderColor: 'border-red-600'
     }
@@ -44,7 +44,7 @@ function App() {
         link.rel = 'icon';
         document.head.appendChild(link);
       }
-      link.href = '/logos/pm.png';
+      link.href = '/public/logos/pm.png';
       link.type = 'image/png';
     };
 
@@ -82,7 +82,7 @@ function App() {
               <span className="inline-flex items-center space-x-2">
                 <span>Senior Infra Associate at</span>
                 <img
-                  src={theme.bgTheme === 'red' ? '/logos/nomblack.png' : '/logos/nomred.png'}
+                  src={theme.bgTheme === 'red' ? '/public/logos/nomblack.png' : '/public/logos/nomred.png'}
                   alt="NOMURA logo"
                   className="h-3 sm:h-4 md:h-5 w-auto"
                 />
@@ -120,7 +120,7 @@ function App() {
               <MatteBackground theme={theme.bgTheme} className="opacity-95" />
               <button
                 className={`w-[120px] h-[75px] rounded-xl text-lg font-bold leading-none transition-all duration-700 ease-in-out ${theme.textColor} bg-transparent opacity-90 hover:opacity-100 hover:scale-110 transform flex items-center justify-center space-x-2`}
-                onClick={() => window.open('https://drive.google.com/file/d/1f631sg0wL2JPQ8JzCzYFg-WSnauQT1h_/view?usp=sharing', '_blank')}
+                onClick={() => window.open('/public/assets/resume.pdf', '_blank')}
               >
                 <span>Résumé</span>
                 <ArrowUpRight className={`w-6 h-6 ${theme.textColor}`} />
@@ -154,7 +154,7 @@ function App() {
           <div className="hidden md:flex absolute bottom-8 left-8 right-8 justify-between items-center">
             <button
               className={`w-[110px] h-[65px] rounded-xl text-base font-bold leading-none transition-all duration-700 ease-in-out ${theme.textColor} bg-transparent opacity-90 hover:opacity-100 hover:scale-110 transform flex items-center justify-center space-x-2`}
-              onClick={() => window.open('https://drive.google.com/file/d/1f631sg0wL2JPQ8JzCzYFg-WSnauQT1h_/view?usp=sharing', '_blank')}
+              onClick={() => window.open('/public/assets/resume.pdf', '_blank')}
             >
               <span>Résumé</span>
               <ArrowUpRight className={`w-6 h-6 ${theme.textColor}`} />

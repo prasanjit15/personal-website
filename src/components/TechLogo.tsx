@@ -9,7 +9,7 @@ export const TechLogo: React.FC<TechLogoProps> = ({ name, className = '' }) => {
   const [imageError, setImageError] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  const logoPath = `/logos/${name.toLowerCase().replace(/[^a-z0-9]/g, '')}.png`;
+  const logoPath = `/public/logos/${name.toLowerCase().replace(/[^a-z0-9]/g, '')}.png`;
 
   const handleImageError = () => {
     setImageError(true);

@@ -120,7 +120,7 @@ function App() {
               <MatteBackground theme={theme.bgTheme} className="opacity-95" />
               <button
                 className={`w-[120px] h-[75px] rounded-xl text-lg font-bold leading-none transition-all duration-700 ease-in-out ${theme.textColor} bg-transparent opacity-90 hover:opacity-100 hover:scale-110 transform flex items-center justify-center space-x-2`}
-                onClick={() => window.open('/resume.pdf', '_blank')}
+                onClick={() => window.open('https://drive.google.com/file/d/1f631sg0wL2JPQ8JzCzYFg-WSnauQT1h_/view?usp=sharing', '_blank')}
               >
                 <span>Résumé</span>
                 <ArrowUpRight className={`w-6 h-6 ${theme.textColor}`} />
@@ -154,7 +154,7 @@ function App() {
           <div className="hidden md:flex absolute bottom-8 left-8 right-8 justify-between items-center">
             <button
               className={`w-[110px] h-[65px] rounded-xl text-base font-bold leading-none transition-all duration-700 ease-in-out ${theme.textColor} bg-transparent opacity-90 hover:opacity-100 hover:scale-110 transform flex items-center justify-center space-x-2`}
-              onClick={() => window.open('/resume.pdf', '_blank')}
+              onClick={() => window.open('https://drive.google.com/file/d/1f631sg0wL2JPQ8JzCzYFg-WSnauQT1h_/view?usp=sharing', '_blank')}
             >
               <span>Résumé</span>
               <ArrowUpRight className={`w-6 h-6 ${theme.textColor}`} />

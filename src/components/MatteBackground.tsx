@@ -10,18 +10,30 @@ export const MatteBackground: React.FC<MatteBackgroundProps> = ({ theme, classNa
     switch (theme) {
       case 'black':
         return {
-          background: '#0f0f0f',
+          backgroundImage: 'url(/logos/blackbg.png)', // Ensure this file exists at public/logos/blackbg.png
+          backgroundColor: '#0f0f0f', // Fallback if image fails to load
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
         };
       case 'white':
         return {
-          background: '#f5f5f5',
+          backgroundImage: 'url(/logos/whitebg.png)', // Ensure this file exists at public/logos/whitebg.png
+          backgroundColor: '#f5f5f5', // Fallback if image fails to load
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
         };
       case 'red':
         return {
-          background: '#b91c1c', // Changed from #7f1d1d to brighter red
+          backgroundImage: 'url(/logos/redbg.png)', // Ensure this file exists at public/logos/redbg.png
+          backgroundColor: '#b91c1c', // Fallback if image fails to load
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
         };
       default:
-        return {};
+        return { backgroundColor: '#f5f5f5' }; // Default fallback
     }
   };
 
@@ -33,7 +45,7 @@ export const MatteBackground: React.FC<MatteBackgroundProps> = ({ theme, classNa
       {/* Matte texture overlay, only for white and red themes */}
       {theme !== 'black' && (
         <div 
-          className="absolute inset-0 opacity-40"
+          className="absolute inset-0 opacity-20" // Reduced opacity for better image visibility
           style={{
             backgroundImage: `
               repeating-linear-gradient(

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, User, Menu, X, ArrowUpRight } from 'lucide-react';  // Removed unused Instagram
+import { Github, Linkedin, Mail, Instagram, ArrowUpRight } from 'lucide-react';
 import { MatteBackground } from './components/MatteBackground';
 import { TechLogo } from './components/TechLogo';
 
 function App() {
   const [currentTheme, setCurrentTheme] = useState(0);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const themes = [
     {
@@ -25,9 +24,9 @@ function App() {
     {
       name: 'Matte Red',
       bgTheme: 'red' as const,
-      textColor: 'text-white',  // No boldness, as per your request
+      textColor: 'text-white',
       accentColor: 'text-black',
-      borderColor: 'border-red-600'  // Fixed: was 'border-red-600'
+      borderColor: 'border-red-600'
     }
   ];
 
@@ -44,7 +43,7 @@ function App() {
         link.rel = 'icon';
         document.head.appendChild(link);
       }
-      link.href = '/logos/pm.png';  // Removed /public
+      link.href = '/logos/pm.png';
       link.type = 'image/png';
     };
 
@@ -70,7 +69,7 @@ function App() {
       <MatteBackground theme={theme.bgTheme} />
       
       {/* Content Container */}
-      <div class="relative z-10 min-h-screen flex items-center justify-center p-4 md:p-8">
+      <div className="relative z-10 min-h-screen flex items-center justify-center p-4 md:p-8">
         <div className="text-center max-w-4xl mx-auto w-full">
           {/* Main Content */}
           <div className="mb-8 md:mb-12">
@@ -82,9 +81,9 @@ function App() {
               <span className="inline-flex items-center space-x-2">
                 <span>Senior Infra Associate at</span>
                 <img
-                  src={theme.bgTheme === 'red' ? '/logos/nomblack.png' : '/logos/nomred.png'}  // Removed /public
+                  src={theme.bgTheme === 'red' ? '/logos/nomblack.png' : '/logos/nomred.png'}
                   alt="NOMURA logo"
-                  className="h-3 sm:h-4 md:h-5 w-auto"
+                  className="h-4 md:h-5 align-middle w-auto"
                 />
               </span>
               <br />
@@ -94,46 +93,38 @@ function App() {
             {/* Social Icons */}
             <div className="flex justify-center space-x-4 md:space-x-6 mb-8 md:mb-16">
               <a href="https://github.com/prasanjit15" target="_blank" rel="noopener noreferrer">
-                <Github className={`w-6 h-6 md:w-8 md:h-8 ${theme.textColor} hover:${theme.accentColor.replace('text-', 'text-')} transition-all duration-300 cursor-pointer hover:scale-110 active:scale-95`} />
+                <Github className={`w-6 h-6 md:w-8 md:h-8 ${theme.textColor} hover:text-violet-500 transition-all duration-300 cursor-pointer hover:scale-110 active:scale-95`} />
               </a>
               <a href="https://www.linkedin.com/in/prasannjit-mohapatra/" target="_blank" rel="noopener noreferrer">
-                <Linkedin className={`w-6 h-6 md:w-8 md:h-8 ${theme.textColor} hover:${theme.accentColor.replace('text-', 'text-')} transition-all duration-300 cursor-pointer hover:scale-110 active:scale-95`} />
+                <Linkedin className={`w-6 h-6 md:w-8 md:h-8 ${theme.textColor} hover:text-blue-600 transition-all duration-300 cursor-pointer hover:scale-110 active:scale-95`} />
               </a>
-              <a href="https://prasannjit.com" target="_blank" rel="noopener noreferrer">
-                <User className={`w-6 h-6 md:w-8 md:h-8 ${theme.textColor} hover:${theme.accentColor.replace('text-', 'text-')} transition-all duration-300 cursor-pointer hover:scale-110 active:scale-95`} />
+              <a href="mailto:prasanjit.mohapatra15@gmail.com" target="_blank" rel="noopener noreferrer">
+                <Mail className={`w-6 h-6 md:w-8 md:h-8 ${theme.textColor} hover:text-green-600 transition-all duration-300 cursor-pointer hover:scale-110 active:scale-95`} />
+              </a>
+              <a href="https://instagram.com/prasannjit15" target="_blank" rel="noopener noreferrer">
+                <Instagram className={`w-6 h-6 md:w-8 md:h-8 ${theme.textColor} hover:text-pink-600 transition-all duration-300 cursor-pointer hover:scale-110 active:scale-95`} />
+                {/* Note: Instagram logo has a gradient (pink to yellow). For a static color, text-pink-600 is used. Uncomment below for gradient if supported:
+                style={{ background: 'linear-gradient(45deg, #E1306C, #FCAF45)' }} */}
               </a>
             </div>
           </div>
-          
-          {/* Mobile Menu Button */}
+
+          {/* Theme Changer - Top-left for mobile */}
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`md:hidden fixed top-4 right-4 z-50 p-3 rounded-full ${theme.textColor} ${theme.borderColor} border backdrop-blur-sm bg-black/10 hover:bg-black/20 transition-all duration-300`}
-            aria-label="Toggle mobile menu"
+            className={`md:hidden fixed top-4 left-4 w-12 h-12 rounded-full text-xl font-bold transition-all duration-700 ease-in-out ${theme.bgTheme === 'red' ? 'text-black' : 'text-red-600'} ${theme.accentColor} !important bg-none border-none opacity-90 hover:opacity-100 hover:scale-110 transform flex items-center justify-center`}
+            onClick={handleThemeChange}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {['黒', '白', '赤'][currentTheme]}
           </button>
 
-          {/* Mobile Menu */}
-          {mobileMenuOpen && (
-            <div className="md:hidden fixed inset-0 z-40 backdrop-blur-lg flex flex-col items-center justify-center space-y-8">
-              <MatteBackground theme={theme.bgTheme} className="opacity-95" />
-              <button
-                className={`w-[120px] h-[75px] rounded-xl text-lg font-bold leading-none transition-all duration-700 ease-in-out ${theme.textColor} bg-transparent opacity-90 hover:opacity-100 hover:scale-110 transform flex items-center justify-center space-x-2`}
-                onClick={() => window.open('/assets/resume.pdf', '_blank')}  // Removed /public
-              >
-                <span>Résumé</span>
-                <ArrowUpRight className={`w-6 h-6 ${theme.textColor}`} />
-              </button>
-              
-              <button
-                className={`w-16 h-16 rounded-full text-3xl font-bold transition-all duration-700 ease-in-out ${theme.bgTheme === 'red' ? 'text-black' : 'text-red-400 shadow-sm'} ${theme.accentColor} !important bg-transparent opacity-80 hover:opacity-100 hover:scale-110 transform flex items-center justify-center`}
-                onClick={handleThemeChange}
-              >
-                {['黒', '白', '赤'][currentTheme]}
-              </button>
-            </div>
-          )}
+          {/* Resume Button - Above slider for mobile */}
+          <button
+            className={`md:hidden fixed bottom-24 left-0 right-0 flex justify-center w-[100px] h-[60px] rounded-xl text-base font-bold leading-none transition-all duration-700 ease-in-out ${theme.textColor} bg-transparent opacity-90 hover:opacity-100 hover:scale-110 transform items-center justify-center space-x-2 mx-auto text-center`}
+            onClick={() => window.open('/assets/resume.pdf', '_blank')}
+          >
+            <span>Résumé</span>
+            <ArrowUpRight className={`w-5 h-5 ${theme.textColor}`} />
+          </button>
 
           {/* Mobile Bottom Navigation */}
           <div className="md:hidden fixed bottom-8 left-0 right-0 flex justify-center items-center">
@@ -141,8 +132,8 @@ function App() {
               <div className="overflow-hidden whitespace-nowrap rounded-2xl py-2">
                 <div className="inline-flex animate-tech-slide-mobile">
                   {[...techStack, ...techStack, ...techStack].map((tech, index) => (
-                    <div key={`mobile-home-${tech}-${index}`} className="w-12 h-8 mx-2 opacity-90 p-1">
-                      <TechLogo name={tech} className={`w-full h-full ${theme.textColor}`} />  // Removed special case for visual_studio
+                    <div key={`mobile-home-${tech}-${index}`} className="w-12 h-8 mx-4 opacity-90 p-1">
+                      <TechLogo name={tech} className={`w-full h-full ${theme.textColor}`} />
                     </div>
                   ))}
                 </div>
@@ -154,7 +145,7 @@ function App() {
           <div className="hidden md:flex absolute bottom-8 left-8 right-8 justify-between items-center">
             <button
               className={`w-[110px] h-[65px] rounded-xl text-base font-bold leading-none transition-all duration-700 ease-in-out ${theme.textColor} bg-transparent opacity-90 hover:opacity-100 hover:scale-110 transform flex items-center justify-center space-x-2`}
-              onClick={() => window.open('/assets/resume.pdf', '_blank')}  // Removed /public
+              onClick={() => window.open('/assets/resume.pdf', '_blank')}
             >
               <span>Résumé</span>
               <ArrowUpRight className={`w-6 h-6 ${theme.textColor}`} />
@@ -173,7 +164,7 @@ function App() {
             </div>
             
             <button
-              className={`w-12 h-12 rounded-full text-2xl font-bold transition-all duration-700 ease-in-out ${theme.bgTheme === 'red' ? 'text-black' : 'text-red-400 shadow-sm'} ${theme.accentColor} !important bg-transparent opacity-90 hover:opacity-100 hover:scale-110 transform flex items-center justify-center`}
+              className={`w-12 h-12 rounded-full text-2xl font-bold transition-all duration-700 ease-in-out ${theme.bgTheme === 'red' ? 'text-black' : 'text-red-600'} ${theme.accentColor} !important bg-none border-none opacity-90 hover:opacity-100 hover:scale-110 transform flex items-center justify-center`}
               onClick={handleThemeChange}
             >
               {['黒', '白', '赤'][currentTheme]}

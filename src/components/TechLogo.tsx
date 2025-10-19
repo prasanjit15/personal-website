@@ -9,7 +9,7 @@ export const TechLogo: React.FC<TechLogoProps> = ({ name, className = '' }) => {
   const [imageError, setImageError] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  const logoPath = `/logos/${name.toLowerCase().replace(/[^a-z0-9]/g, '')}.png`;  // Removed /public
+  const logoPath = `/logos/${name.toLowerCase().replace(/[^a-z0-9]/g, '')}.png`; // Ensure all tech logos exist in public/logos
 
   const handleImageError = () => {
     setImageError(true);
@@ -20,10 +20,10 @@ export const TechLogo: React.FC<TechLogoProps> = ({ name, className = '' }) => {
   };
 
   if (imageError) {
-    // Fallback to text if image fails to load
+    // Fallback to text if image fails to load, reduced opacity to minimize visibility
     return (
       <div className={`flex items-center justify-center ${className}`}>
-        <span className="text-xs font-medium text-center px-1 opacity-80">
+        <span className="text-xs font-medium text-center px-1 opacity-50">
           {name}
         </span>
       </div>

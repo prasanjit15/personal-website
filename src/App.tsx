@@ -5,6 +5,7 @@ import { TechLogo } from './components/TechLogo';
 
 function App() {
   const [currentTheme, setCurrentTheme] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
   
   const themes = [
     {
@@ -31,7 +32,9 @@ function App() {
   ];
 
   const handleThemeChange = () => {
+    setIsAnimating(true);
     setCurrentTheme((prev) => (prev + 1) % themes.length);
+    setTimeout(() => setIsAnimating(false), 500); // Match animation duration
   };
 
   // Set favicon dynamically
@@ -64,7 +67,7 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen w-full relative overflow-hidden">
+    <div className="min-h-dvh w-full relative overflow-hidden">
       {/* Matte Background */}
       <MatteBackground theme={theme.bgTheme} />
       
@@ -111,7 +114,7 @@ function App() {
 
           {/* Theme Changer - Top-left for mobile */}
           <button
-            className={`md:hidden fixed top-4 left-4 w-12 h-12 rounded-full text-xl font-bold transition-all duration-700 ease-in-out ${theme.bgTheme === 'red' ? 'text-black' : 'text-red-600'} ${theme.accentColor} !important bg-none border-none opacity-90 hover:opacity-100 hover:scale-110 transform flex items-center justify-center`}
+            className={`md:hidden fixed top-4 left-4 w-12 h-12 rounded-full text-xl font-bold transition-all duration-500 ease-in-out ${theme.bgTheme === 'red' ? 'text-black' : 'text-red-600'} ${theme.accentColor} !important opacity-90 ${isAnimating ? 'scale-110 animate-spin-once' : 'scale-100'} flex items-center justify-center`}
             onClick={handleThemeChange}
           >
             {['黒', '白', '赤'][currentTheme]}
@@ -164,12 +167,25 @@ function App() {
             </div>
             
             <button
-              className={`w-12 h-12 rounded-full text-2xl font-bold transition-all duration-700 ease-in-out ${theme.bgTheme === 'red' ? 'text-black' : 'text-red-600'} ${theme.accentColor} !important bg-none border-none opacity-90 hover:opacity-100 hover:scale-110 transform flex items-center justify-center`}
+              className={`w-12 h-12 rounded-full text-2xl font-bold transition-all duration-500 ease-in-out ${theme.bgTheme === 'red' ? 'text-black' : 'text-red-600'} ${theme.accentColor} !important opacity-90 ${isAnimating ? 'scale-110 animate-spin-once' : 'scale-100'} flex items-center justify-center`}
               onClick={handleThemeChange}
             >
               {['黒', '白', '赤'][currentTheme]}
             </button>
           </div>
+
+          {/* Custom CSS for animation */}
+          <style>
+            {`
+              @keyframes spinOnce {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+              }
+              .animate-spin-once {
+                animation: spinOnce 0.5s ease-out forwards;
+              }
+            `}
+          </style>
         </div>
       </div>
     </div>
